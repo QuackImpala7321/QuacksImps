@@ -2,9 +2,11 @@
   "schemaVersion": 1,
   "id": "qimps",
   "version": "${version}",
-  "name": "QuacksImps",
-  "description": "",
-  "authors": [],
+  "name": "Quack's Imps",
+  "description": "General improvements mod mainly aimed at redstone.",
+  "authors": [
+    "QuackImpala7321"
+  ],
   "contact": {
     "repo": "https://github.com/QuackImpala7321/QuacksImps"
   },

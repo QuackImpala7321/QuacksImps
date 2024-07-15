@@ -23,8 +23,8 @@ public class PlacerBlockEntity extends LootableContainerBlockEntity {
     }
 
     public int getFirstNonEmptySlot() {
-        for (int i = 0; i < size(); i++)
-            if (!getStack(i).isEmpty())
+        for (int i = 0; i < inventory.size(); i++)
+            if (!inventory.get(i).isEmpty())
                 return i;
         return -1;
     }

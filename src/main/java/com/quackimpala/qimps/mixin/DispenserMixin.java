@@ -22,7 +22,7 @@ public abstract class DispenserMixin implements DispenserMixinAccessor {
     }
 
     @ModifyArg(
-            method = "Lnet/minecraft/block/DispenserBlock;<init>(Lnet/minecraft/block/AbstractBlock$Settings;)V",
+            method = "<init>(Lnet/minecraft/block/AbstractBlock$Settings;)V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/block/DispenserBlock;setDefaultState(Lnet/minecraft/block/BlockState;)V"),
             index = 0
     )

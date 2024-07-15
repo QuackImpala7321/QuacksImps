@@ -1,5 +1,7 @@
 {
   "block.qimps.placer": "Placer",
 
-  "stat.qimps.inspect_placer": "Placers Searched"
+  "stat.qimps.inspect_placer": "Placers Searched",
+
+  "subtitles.qimps.entity.leash.break": "Leash snaps"
 }

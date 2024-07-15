@@ -34,6 +34,7 @@ public abstract class MobEntityMixin implements LastLeashDataAccessor {
     }
 
     @Override
+    @Nullable
     public LeashData getLastLeashData() {
         return lastLeashData;
     }

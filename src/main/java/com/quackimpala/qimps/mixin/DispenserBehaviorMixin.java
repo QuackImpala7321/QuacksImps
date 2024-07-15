@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 @Mixin(DispenserBehavior.class)
 public interface DispenserBehaviorMixin {
     @ModifyArg(
-            method = "Lnet/minecraft/block/dispenser/DispenserBehavior;registerDefaults()V",
+            method = "registerDefaults",
             at = @At(value = "INVOKE",
                     target = "Lnet/minecraft/block/DispenserBlock;registerBehavior(Lnet/minecraft/item/ItemConvertible;Lnet/minecraft/block/dispenser/DispenserBehavior;)V",
                     ordinal = 51),

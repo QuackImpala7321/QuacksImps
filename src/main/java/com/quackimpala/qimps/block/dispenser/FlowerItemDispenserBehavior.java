@@ -1,8 +1,6 @@
 package com.quackimpala.qimps.block.dispenser;
 
-import com.quackimpala.qimps.QuacksImps;
 import net.minecraft.block.DispenserBlock;
-import net.minecraft.block.dispenser.DispenserBehavior;
 import net.minecraft.block.dispenser.ItemDispenserBehavior;
 import net.minecraft.component.type.SuspiciousStewEffectsComponent;
 import net.minecraft.entity.passive.MooshroomEntity;

@@ -1,6 +1,5 @@
 package com.quackimpala.qimps.block.dispenser;
 
-import com.quackimpala.qimps.QuacksImps;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.FallibleItemDispenserBehavior;
 import net.minecraft.component.DataComponentTypes;
@@ -14,7 +13,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class BowlItemDispenserBehavior extends FallibleItemDispenserBehavior {

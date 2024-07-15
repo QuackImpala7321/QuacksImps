@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(FlowerBlock.class)
 public abstract class FlowerBlockMixin {
     @Inject(
-            method = "Lnet/minecraft/block/FlowerBlock;<init>(Lnet/minecraft/component/type/SuspiciousStewEffectsComponent;Lnet/minecraft/block/AbstractBlock$Settings;)V",
+            method = "<init>(Lnet/minecraft/component/type/SuspiciousStewEffectsComponent;Lnet/minecraft/block/AbstractBlock$Settings;)V",
             at = @At("TAIL")
     )
     private void initMixin(SuspiciousStewEffectsComponent stewEffects, AbstractBlock.Settings settings, CallbackInfo ci) {

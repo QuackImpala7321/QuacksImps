@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(DispenserBlockEntity.class)
-public class DispenserBlockEntityMixin {
+public abstract class DispenserBlockEntityMixin {
     @Inject(
             method = "chooseNonEmptySlot",
             at = @At(
