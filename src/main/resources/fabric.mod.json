@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "qimps",
+  "version": "${version}",
+  "name": "QuacksImps",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/QuackImpala7321/QuacksImps"
+  },
+  "license": "MIT",
+  "icon": "assets/qimps/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.quackimpala.qimps.client.QuacksImpsClient"
+    ],
+    "main": [
+      "com.quackimpala.qimps.QuacksImps"
+    ]
+  },
+  "mixins": [
+    "qimps.mixins.json"
+  ],
+  "accessWidener": "qimps.accesswidener",
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

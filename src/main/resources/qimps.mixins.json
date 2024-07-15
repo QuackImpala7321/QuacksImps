@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.quackimpala.qimps.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "DispenserBehaviorMixin",
+    "DispenserBlockEntityMixin",
+    "DispenserMixin",
+    "FlowerBlockMixin",
+    "HoneycombItemMixin",
+    "LeashableMixin",
+    "MobEntityMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
