@@ -1,5 +1,6 @@
-package com.quackimpala.qimps;
+package com.quackimpala.qimps.registry;
 
+import com.quackimpala.qimps.QuacksImps;
 import com.quackimpala.qimps.block.PlacerBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;

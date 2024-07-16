@@ -1,6 +1,6 @@
 package com.quackimpala.qimps.mixin;
 
-import com.quackimpala.qimps.block.dispenser.ModDispenserBehaviors;
+import com.quackimpala.qimps.registry.ModDispenserBehaviors;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.component.type.SuspiciousStewEffectsComponent;

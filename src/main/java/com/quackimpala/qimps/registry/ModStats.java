@@ -1,5 +1,6 @@
-package com.quackimpala.qimps;
+package com.quackimpala.qimps.registry;
 
+import com.quackimpala.qimps.QuacksImps;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.stat.StatFormatter;

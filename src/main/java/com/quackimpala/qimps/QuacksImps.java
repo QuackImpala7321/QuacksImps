@@ -1,6 +1,6 @@
 package com.quackimpala.qimps;
 
-import com.quackimpala.qimps.block.dispenser.ModDispenserBehaviors;
+import com.quackimpala.qimps.registry.*;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

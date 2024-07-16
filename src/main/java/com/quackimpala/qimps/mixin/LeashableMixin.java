@@ -1,7 +1,7 @@
 package com.quackimpala.qimps.mixin;
 
 import com.quackimpala.qimps.LastLeashDataAccessor;
-import com.quackimpala.qimps.ModSoundEvents;
+import com.quackimpala.qimps.registry.ModSoundEvents;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.Leashable;

@@ -1,6 +1,6 @@
 package com.quackimpala.qimps.block.entity;
 
-import com.quackimpala.qimps.ModBlockEntities;
+import com.quackimpala.qimps.registry.ModBlockEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
 import net.minecraft.entity.player.PlayerInventory;

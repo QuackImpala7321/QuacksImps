@@ -1,5 +1,6 @@
-package com.quackimpala.qimps;
+package com.quackimpala.qimps.registry;
 
+import com.quackimpala.qimps.QuacksImps;
 import com.quackimpala.qimps.block.entity.PlacerBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;

@@ -1,8 +1,8 @@
 package com.quackimpala.qimps.block;
 
 import com.mojang.serialization.MapCodec;
-import com.quackimpala.qimps.ModBlockEntities;
-import com.quackimpala.qimps.ModStats;
+import com.quackimpala.qimps.registry.ModBlockEntities;
+import com.quackimpala.qimps.registry.ModStats;
 import com.quackimpala.qimps.PlacerItemPlacementContext;
 import com.quackimpala.qimps.block.entity.PlacerBlockEntity;
 import net.minecraft.block.Block;
@@ -10,16 +10,11 @@ import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.BlockStateComponent;
-import net.minecraft.component.type.NbtComponent;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
@@ -31,8 +26,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
-import net.minecraft.world.event.GameEvent;
-import net.minecraft.world.event.GameEvent.Emitter;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
