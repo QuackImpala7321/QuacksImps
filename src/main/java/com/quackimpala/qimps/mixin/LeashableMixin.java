@@ -55,6 +55,13 @@ public interface LeashableMixin extends LastLeashDataAccessor {
             return;
 
         acc.setLastLeashData(entity.getLeashData());
+    }
+
+    @Inject(
+            method = "tickLeash",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Leashable;detachLeash()V", shift = At.Shift.AFTER)
+    )
+    private static <E extends Entity & Leashable> void tickLeashMixin(E entity, CallbackInfo ci) {
         entity.playSound(ModSoundEvents.LEASH_BREAK, 1.0f, 1.0f);
     }
 }
