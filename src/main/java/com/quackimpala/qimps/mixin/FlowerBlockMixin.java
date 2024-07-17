@@ -16,6 +16,6 @@ public abstract class FlowerBlockMixin {
             at = @At("TAIL")
     )
     private void initMixin(SuspiciousStewEffectsComponent stewEffects, AbstractBlock.Settings settings, CallbackInfo ci) {
-        ModDispenserBehaviors.queueFlowerBehavior(FlowerBlock.class.cast(this));
+        ModDispenserBehaviors.FLOWERS.queue(FlowerBlock.class.cast(this));
     }
 }
