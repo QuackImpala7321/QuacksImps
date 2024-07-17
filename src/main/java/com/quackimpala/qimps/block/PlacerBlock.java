@@ -26,6 +26,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
+import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
@@ -83,8 +84,8 @@ public class PlacerBlock extends BlockWithEntity {
 
         final boolean result = blockItem.place(
                 new PlacerItemPlacementContext(world, targetPos, stack, facing)).isAccepted();
-        world.updateNeighbors(pos, this);
 
+        world.emitGameEvent(GameEvent.BLOCK_ACTIVATE, pos, GameEvent.Emitter.of(placerBlockEntity.getCachedState()));
         return result;
     }
 
@@ -95,9 +96,9 @@ public class PlacerBlock extends BlockWithEntity {
 
         if (powered && !triggered) {
             world.scheduleBlockTick(pos, this, 4);
-            world.setBlockState(pos, state.with(TRIGGERED, true), 2);
+            world.setBlockState(pos, state.with(TRIGGERED, true), Block.NOTIFY_LISTENERS);
         } else if (!powered && triggered)
-            world.setBlockState(pos, state.with(TRIGGERED, false), 2);
+            world.setBlockState(pos, state.with(TRIGGERED, false), Block.NOTIFY_LISTENERS);
     }
 
     @Override

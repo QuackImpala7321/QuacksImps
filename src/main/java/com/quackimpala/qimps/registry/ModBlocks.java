@@ -23,6 +23,10 @@ public class ModBlocks {
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
+        return registerBlockWithoutItem(name, block);
+    }
+
+    private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, Identifier.of(QuacksImps.MOD_ID, name), block);
     }
 
@@ -34,10 +38,10 @@ public class ModBlocks {
 
     private static void addToCreative(RegistryKey<ItemGroup> group, ItemConvertible item, Spot spot, ItemConvertible target) {
         ItemGroupEvents.modifyEntriesEvent(group).register(content -> {
-            if (spot == Spot.BEFORE)
-                content.addBefore(target, item);
-            else
-                content.addAfter(target, item);
+            switch (spot) {
+                case BEFORE -> content.addBefore(target, item);
+                case AFTER -> content.addAfter(target, item);
+            }
         });
     }
 

@@ -28,4 +28,12 @@ public class PlacerItemPlacementContext extends ItemPlacementContext {
                 ? Direction.DOWN
                 : Direction.UP;
     }
+
+    @Override
+    public Direction[] getPlacementDirections() {
+        return new Direction[]{
+                facing.getOpposite(),
+                facing
+        };
+    }
 }

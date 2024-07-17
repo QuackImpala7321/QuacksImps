@@ -4,7 +4,7 @@
     "bottom": "minecraft:block/furnace_top",
     "top": "qimps:block/placer_top",
     "north": "qimps:block/placer_front",
-    "south": "qimps:block/placer_side",
+    "south": "minecraft:block/furnace_side",
     "west": "qimps:block/placer_side",
     "east": "qimps:block/placer_side",
     "particle": "#north"
