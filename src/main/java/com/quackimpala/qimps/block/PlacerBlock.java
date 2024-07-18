@@ -1,6 +1,7 @@
 package com.quackimpala.qimps.block;
 
 import com.mojang.serialization.MapCodec;
+import com.quackimpala.qimps.QuacksImps;
 import com.quackimpala.qimps.registry.ModBlockEntities;
 import com.quackimpala.qimps.registry.ModStats;
 import com.quackimpala.qimps.PlacerItemPlacementContext;
@@ -25,6 +26,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldEvents;
 import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
@@ -86,6 +88,7 @@ public class PlacerBlock extends BlockWithEntity {
                 new PlacerItemPlacementContext(world, targetPos, stack, facing)).isAccepted();
 
         world.emitGameEvent(GameEvent.BLOCK_ACTIVATE, pos, GameEvent.Emitter.of(placerBlockEntity.getCachedState()));
+        world.updateNeighbors(pos, this);
         return result;
     }
 
@@ -96,9 +99,9 @@ public class PlacerBlock extends BlockWithEntity {
 
         if (powered && !triggered) {
             world.scheduleBlockTick(pos, this, 4);
-            world.setBlockState(pos, state.with(TRIGGERED, true), Block.NOTIFY_ALL);
+            world.setBlockState(pos, state.with(TRIGGERED, true), Block.NOTIFY_LISTENERS);
         } else if (!powered && triggered)
-            world.setBlockState(pos, state.with(TRIGGERED, false), Block.NOTIFY_ALL);
+            world.setBlockState(pos, state.with(TRIGGERED, false), Block.NOTIFY_LISTENERS);
     }
 
     @Override
