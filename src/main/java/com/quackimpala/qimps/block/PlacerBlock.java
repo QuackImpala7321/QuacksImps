@@ -96,9 +96,9 @@ public class PlacerBlock extends BlockWithEntity {
 
         if (powered && !triggered) {
             world.scheduleBlockTick(pos, this, 4);
-            world.setBlockState(pos, state.with(TRIGGERED, true), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos, state.with(TRIGGERED, true), Block.NOTIFY_ALL);
         } else if (!powered && triggered)
-            world.setBlockState(pos, state.with(TRIGGERED, false), Block.NOTIFY_LISTENERS);
+            world.setBlockState(pos, state.with(TRIGGERED, false), Block.NOTIFY_ALL);
     }
 
     @Override
