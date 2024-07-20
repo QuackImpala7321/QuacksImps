@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(DispenserBlock.class)
-public abstract class DispenserMixin implements DispenserMixinAccessor {
+public abstract class DispenserBlockMixin implements DispenserMixinAccessor {
     @Inject(
             method = "appendProperties",
             at = @At("TAIL")

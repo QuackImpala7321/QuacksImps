@@ -37,6 +37,7 @@ public class PlacerBlock extends BlockWithEntity {
     public static MapCodec<PlacerBlock> CODEC = createCodec(PlacerBlock::new);
     public static final DirectionProperty FACING = Properties.FACING;
     public static final BooleanProperty TRIGGERED = Properties.TRIGGERED;
+    private static final int DELAY = 4;
 
     public PlacerBlock(Settings settings) {
         super(settings);
@@ -98,7 +99,7 @@ public class PlacerBlock extends BlockWithEntity {
         boolean triggered = state.get(TRIGGERED);
 
         if (powered && !triggered) {
-            world.scheduleBlockTick(pos, this, 4);
+            world.scheduleBlockTick(pos, this, DELAY);
             world.setBlockState(pos, state.with(TRIGGERED, true), Block.NOTIFY_LISTENERS);
         } else if (!powered && triggered)
             world.setBlockState(pos, state.with(TRIGGERED, false), Block.NOTIFY_LISTENERS);
