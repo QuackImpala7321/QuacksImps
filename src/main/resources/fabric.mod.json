@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "qimps",
+  "id": "quimps",
   "version": "${version}",
   "name": "Quack's Imps",
   "description": "General improvements mod mainly aimed at redstone.",
@@ -11,20 +11,20 @@
     "repo": "https://github.com/QuackImpala7321/QuacksImps"
   },
   "license": "MIT",
-  "icon": "assets/qimps/icon.png",
+  "icon": "assets/quimps/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
-      "com.quackimpala.qimps.client.QuacksImpsClient"
+      "com.quackimpala.quimps.client.QuacksImpsClient"
     ],
     "main": [
-      "com.quackimpala.qimps.QuacksImps"
+      "com.quackimpala.quimps.QuacksImps"
     ]
   },
   "mixins": [
-    "qimps.mixins.json"
+    "quimps.mixins.json"
   ],
-  "accessWidener": "qimps.accesswidener",
+  "accessWidener": "quimps.accesswidener",
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",

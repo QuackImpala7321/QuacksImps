@@ -1,0 +1,10 @@
+{
+  "entity.leash.break": {
+    "sounds": [
+      "entity/leashknot/break1",
+      "entity/leashknot/break2",
+      "entity/leashknot/break3"
+    ],
+    "subtitle": "subtitles.quimps.entity.leash.break"
+  }
+}

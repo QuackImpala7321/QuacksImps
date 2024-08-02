@@ -1,0 +1,9 @@
+accessWidener v2 named
+
+accessible method net/minecraft/entity/passive/GoatEntity getMilkingSound ()Lnet/minecraft/sound/SoundEvent;
+accessible method net/minecraft/entity/Leashable$LeashData <init> (Lcom/mojang/datafixers/util/Either;)V
+accessible field net/minecraft/entity/passive/MooshroomEntity stewEffects Lnet/minecraft/component/type/SuspiciousStewEffectsComponent;
+accessible method net/minecraft/entity/passive/MooshroomEntity getStewEffectFrom (Lnet/minecraft/item/ItemStack;)Ljava/util/Optional;
+accessible method net/minecraft/block/entity/DispenserBlockEntity getHeldStacks ()Lnet/minecraft/util/collection/DefaultedList;
+accessible field net/minecraft/block/AbstractCauldronBlock behaviorMap Lnet/minecraft/block/cauldron/CauldronBehavior$CauldronBehaviorMap;
+accessible method net/minecraft/block/dispenser/ItemDispenserBehavior decrementStackWithRemainder (Lnet/minecraft/util/math/BlockPointer;Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack;

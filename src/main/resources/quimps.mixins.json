@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.quackimpala.quimps.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "AbstractMinecartMixin",
+    "CauldronBehaviorMixin",
+    "CropBlockMixin",
+    "DispenserBlockEntityMixin",
+    "DispenserBlockMixin",
+    "FlowerBlockMixin",
+    "HoneycombItemMixin",
+    "LeashableMixin",
+    "MobEntityMixin",
+    "PoweredRailBlockMixin",
+    "dispenser_behavior.BucketItemDispenserBehavior",
+    "dispenser_behavior.FluidItemDispenserBehavior",
+    "dispenser_behavior.GlassBottleItemDispenserBehavior",
+    "dispenser_behavior.PotionItemDispenserBehavior"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

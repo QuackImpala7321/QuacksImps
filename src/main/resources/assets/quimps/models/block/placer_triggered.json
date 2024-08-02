@@ -1,0 +1,6 @@
+{
+  "parent": "quimps:block/placer",
+  "textures": {
+    "north": "quimps:block/placer_front_triggered"
+  }
+}

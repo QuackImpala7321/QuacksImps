@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "facing=down,triggered=false": {
+      "model": "quimps:block/placer",
+      "x": 90
+    },
+    "facing=down,triggered=true": {
+      "model": "quimps:block/placer_triggered",
+      "x": 90
+    },
+    "facing=east,triggered=false": {
+      "model": "quimps:block/placer",
+      "y": 90
+    },
+    "facing=east,triggered=true": {
+      "model": "quimps:block/placer_triggered",
+      "y": 90
+    },
+    "facing=north,triggered=false": {
+      "model": "quimps:block/placer"
+    },
+    "facing=north,triggered=true": {
+      "model": "quimps:block/placer_triggered"
+    },
+    "facing=south,triggered=false": {
+      "model": "quimps:block/placer",
+      "y": 180
+    },
+    "facing=south,triggered=true": {
+      "model": "quimps:block/placer_triggered",
+      "y": 180
+    },
+    "facing=up,triggered=false": {
+      "model": "quimps:block/placer",
+      "x": 270
+    },
+    "facing=up,triggered=true": {
+      "model": "quimps:block/placer_triggered",
+      "x": 270
+    },
+    "facing=west,triggered=false": {
+      "model": "quimps:block/placer",
+      "y": 270
+    },
+    "facing=west,triggered=true": {
+      "model": "quimps:block/placer_triggered",
+      "y": 270
+    }
+  }
+}
