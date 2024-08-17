@@ -5,11 +5,13 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "AbstractMinecartMixin",
+    "AnimalEntityMixin",
     "CauldronBehaviorMixin",
     "CropBlockMixin",
     "DispenserBlockEntityMixin",
     "DispenserBlockMixin",
     "FlowerBlockMixin",
+    "GoalSelectorMixin",
     "HoneycombItemMixin",
     "LeashableMixin",
     "MobEntityMixin",

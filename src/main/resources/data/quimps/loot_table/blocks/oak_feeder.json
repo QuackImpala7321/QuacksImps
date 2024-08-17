@@ -20,11 +20,11 @@
               "source": "block_entity"
             }
           ],
-          "name": "quimps:placer"
+          "name": "quimps:oak_feeder"
         }
       ],
       "rolls": 1
     }
   ],
-  "random_sequence": "quimps:blocks/placer"
+  "random_sequence": "quimps:blocks/oak_feeder"
 }

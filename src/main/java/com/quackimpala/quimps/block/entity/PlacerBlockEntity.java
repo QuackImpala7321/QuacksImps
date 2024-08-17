@@ -1,6 +1,5 @@
 package com.quackimpala.quimps.block.entity;
 
-import com.quackimpala.quimps.QuacksImps;
 import com.quackimpala.quimps.registry.ModBlockEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
@@ -32,7 +31,7 @@ public class PlacerBlockEntity extends LootableContainerBlockEntity {
 
     @Override
     protected Text getContainerName() {
-        return Text.translatable(String.format("block.%s.placer", QuacksImps.MOD_ID));
+        return Text.translatable("block.quimps.placer");
     }
 
     @Override

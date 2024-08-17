@@ -1,0 +1,7 @@
+{
+  "parent": "quimps:block/feeder",
+  "textures": {
+    "texture": "minecraft:block/spruce_planks",
+    "top": "minecraft:block/spruce_log"
+  }
+}

@@ -1,22 +1,18 @@
 package com.quackimpala.quimps.mixin.dispenser_behavior;
 
+import com.quackimpala.quimps.registry.tag.ModEntityTags;
 import com.quackimpala.quimps.util.CauldronUtil;
-import net.fabricmc.fabric.api.tag.convention.v2.TagUtil;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.ItemDispenserBehavior;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.GoatEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.predicate.entity.EntityPredicates;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPointer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
@@ -30,10 +26,6 @@ import java.util.List;
 
 @Mixin(targets = "net.minecraft.block.dispenser.DispenserBehavior$16")
 public abstract class BucketItemDispenserBehavior extends ItemDispenserBehavior {
-    @Unique
-    private static final TagKey<EntityType<?>> MILKABLE_TAG = TagKey.of(RegistryKeys.ENTITY_TYPE,
-            Identifier.of(TagUtil.C_TAG_NAMESPACE, "milkable"));
-
     @Inject(
             method = "dispenseSilently",
             at = @At("HEAD"),
@@ -56,7 +48,7 @@ public abstract class BucketItemDispenserBehavior extends ItemDispenserBehavior 
     @Unique
     private boolean tryMilkEntity(ServerWorld world, BlockPos pos) {
         final List<LivingEntity> entities = world.getEntitiesByClass(LivingEntity.class, new Box(pos), entity ->
-                entity.getType().isIn(MILKABLE_TAG) && EntityPredicates.EXCEPT_SPECTATOR.test(entity));
+                entity.getType().isIn(ModEntityTags.MILKABLE_TAG) && EntityPredicates.EXCEPT_SPECTATOR.test(entity));
 
         if (entities.isEmpty())
             return false;

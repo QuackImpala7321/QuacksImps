@@ -7,3 +7,6 @@ accessible method net/minecraft/entity/passive/MooshroomEntity getStewEffectFrom
 accessible method net/minecraft/block/entity/DispenserBlockEntity getHeldStacks ()Lnet/minecraft/util/collection/DefaultedList;
 accessible field net/minecraft/block/AbstractCauldronBlock behaviorMap Lnet/minecraft/block/cauldron/CauldronBehavior$CauldronBehaviorMap;
 accessible method net/minecraft/block/dispenser/ItemDispenserBehavior decrementStackWithRemainder (Lnet/minecraft/util/math/BlockPointer;Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack;
+accessible field net/minecraft/entity/ai/goal/TemptGoal speed D
+accessible field net/minecraft/entity/ai/goal/TemptGoal foodPredicate Ljava/util/function/Predicate;
+accessible field net/minecraft/entity/ai/goal/TemptGoal mob Lnet/minecraft/entity/mob/PathAwareEntity;

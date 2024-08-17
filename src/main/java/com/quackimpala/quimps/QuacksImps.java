@@ -1,6 +1,7 @@
 package com.quackimpala.quimps;
 
 import com.quackimpala.quimps.registry.*;
+import com.quackimpala.quimps.registry.tag.ModEntityTags;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,5 +20,6 @@ public class QuacksImps implements ModInitializer {
 
         ModStats.registerStats();
         ModDispenserBehaviors.registerBehaviors();
+        ModItems.populateItemGroups();
     }
 }

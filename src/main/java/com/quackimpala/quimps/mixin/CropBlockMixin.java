@@ -22,10 +22,10 @@ public abstract class CropBlockMixin extends PlantBlock {
     protected int getComparatorOutput(BlockState state, World world, BlockPos pos) {
         if (!(state.getBlock() instanceof CropBlock cropBlock))
             return 0;
-
         return cropBlock.getAge(state);
     }
 
+    @Override
     protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (!world.isClient())
             world.updateComparators(pos, this);

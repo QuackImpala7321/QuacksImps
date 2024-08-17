@@ -1,5 +1,6 @@
 package com.quackimpala.quimps.mixin;
 
+import com.llamalad7.mixinextras.sugar.Local;
 import com.quackimpala.quimps.PoweredRailMixinAccessor;
 import com.quackimpala.quimps.PoweredRailMixinAccessor.PowerDirection;
 import net.minecraft.block.BlockState;
@@ -12,13 +13,12 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
 @Mixin(AbstractMinecartEntity.class)
 public abstract class AbstractMinecartMixin {
     @Shadow
-    public abstract boolean willHitBlockAt(BlockPos pos);
+    protected abstract boolean willHitBlockAt(BlockPos pos);
 
     @Unique
     private BlockState stateBelow;
@@ -44,10 +44,9 @@ public abstract class AbstractMinecartMixin {
                     target = "Lnet/minecraft/entity/vehicle/AbstractMinecartEntity;setVelocity(DDD)V",
                     ordinal = 1,
                     shift = At.Shift.BEFORE
-            ),
-            locals = LocalCapture.CAPTURE_FAILHARD
+            )
     )
-    private void standStillOnPoweredRailMixin(BlockPos pos, BlockState state, CallbackInfo ci, double d, double e, double f, Vec3d vec3d, boolean bl, boolean bl2, double g, Vec3d vec3d2, RailShape railShape) {
+    private void standStillOnPoweredRailMixin(BlockPos pos, BlockState state, CallbackInfo ci, @Local RailShape railShape) {
         final PowerDirection direction = state.get(PoweredRailMixinAccessor.MOMENTUM);
         if (railShape == RailShape.EAST_WEST) {
             if (willHitBlockAt(pos.west()) || willHitBlockAt(pos.east()))
