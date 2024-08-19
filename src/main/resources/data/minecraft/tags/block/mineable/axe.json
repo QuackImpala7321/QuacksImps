@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "quimps:oak_feeder",
-    "quimps:spruce_feeder",
-    "quimps:birch_feeder"
+    "quimps:feeder"
   ]
 }

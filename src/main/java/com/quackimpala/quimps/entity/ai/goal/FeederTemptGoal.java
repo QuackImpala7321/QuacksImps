@@ -8,6 +8,7 @@ import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
@@ -16,7 +17,7 @@ import java.util.*;
 import java.util.function.Predicate;
 
 public class FeederTemptGoal extends Goal {
-    private static final double MIN_DISTANCE = 2.0d;
+    private static final double MIN_DISTANCE = 3.0d;
 
     protected final AnimalEntity entity;
     private final double speed;
@@ -62,8 +63,7 @@ public class FeederTemptGoal extends Goal {
     }
 
     private Optional<FeederBlockEntity> getClosestFeeder() {
-        final Box box = new Box(entity.getBlockPos()).expand(10);
-
+        final Box box = new Box(entity.getBlockPos()).expand(8.0, 2.0, 8.0);
         Optional<FeederBlockEntity> closest = Optional.empty();
         double closestDistance = Double.POSITIVE_INFINITY;
         for (int x = (int) box.minX; x <= box.maxX; x++)
@@ -74,10 +74,11 @@ public class FeederTemptGoal extends Goal {
                         continue;
 
                     final double distance = Vec3d.of(optional.get().getPos()).distanceTo(entity.getPos());
-                    if (distance < closestDistance) {
-                        closest = optional;
-                        closestDistance = distance;
-                    }
+                    if (distance >= closestDistance)
+                        continue;
+
+                    closest = optional;
+                    closestDistance = distance;
                 }
 
         return closest;
@@ -132,10 +133,10 @@ public class FeederTemptGoal extends Goal {
             return;
 
         final FeederBlockEntity feeder = optional.get();
-        if (!isActive() || !entity.isBreedingItem(feeder.getStack()))
+        if (!isActive() || !entity.isBreedingItem(feeder.getStack()) || !tryEat())
             return;
 
-        if (tryEat())
-            feeder.decreaseStack(1);
+        entity.getWorld().addSyncedBlockEvent(feeder.getPos(), feeder.getCachedState().getBlock(),
+                FeederBlockEntity.EAT_EVENT, 0);
     }
 }

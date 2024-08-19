@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 
 public class ModBlockEntities {
     public static final BlockEntityType<PlacerBlockEntity> PLACER = create("placer", PlacerBlockEntity::new, ModBlocks.PLACER);
-    public static final BlockEntityType<FeederBlockEntity> FEEDER = create("feeder", FeederBlockEntity::new, ModBlocks.OAK_FEEDER);
+    public static final BlockEntityType<FeederBlockEntity> FEEDER = create("feeder", FeederBlockEntity::new, ModBlocks.FEEDER);
 
     private static <T extends BlockEntity> BlockEntityType<T> create(String id, BlockEntityType.BlockEntityFactory<T> factory, Block... blocks) {
         return create(id, BlockEntityType.Builder.create(factory, blocks));

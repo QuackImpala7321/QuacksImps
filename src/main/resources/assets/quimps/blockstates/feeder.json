@@ -1,18 +1,18 @@
 {
   "variants": {
     "facing=east": {
-      "model": "quimps:block/birch_feeder",
+      "model": "quimps:block/feeder",
       "y": 90
     },
     "facing=north": {
-      "model": "quimps:block/birch_feeder"
+      "model": "quimps:block/feeder"
     },
     "facing=south": {
-      "model": "quimps:block/birch_feeder",
+      "model": "quimps:block/feeder",
       "y": 180
     },
     "facing=west": {
-      "model": "quimps:block/birch_feeder",
+      "model": "quimps:block/feeder",
       "y": 270
     }
   }

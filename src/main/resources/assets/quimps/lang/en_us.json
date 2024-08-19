@@ -1,8 +1,6 @@
 {
   "block.quimps.placer": "Placer",
-  "block.quimps.oak_feeder": "Oak Feeder",
-  "block.quimps.spruce_feeder": "Spruce Feeder",
-  "block.quimps.birch_feeder": "Birch Feeder",
+  "block.quimps.feeder": "Feeder",
 
   "stat.quimps.inspect_placer": "Placers Searched",
 

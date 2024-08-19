@@ -5,6 +5,7 @@ import com.quackimpala.quimps.block.entity.FeederBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.ItemEntity;
+import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
@@ -21,6 +22,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
 public class FeederBlock extends BlockWithEntity {
@@ -29,7 +31,8 @@ public class FeederBlock extends BlockWithEntity {
     public static MapCodec<FeederBlock> CODEC = createCodec(FeederBlock::new);
     protected static VoxelShape SHAPE = VoxelShapes.union(
             createCuboidShape(0, 13, 0, 16, 16, 16),
-            createCuboidShape(1, 0, 1, 15, 13, 15));
+            createCuboidShape(1, 0, 1, 15, 13, 15)
+    );
 
     public FeederBlock(Settings settings) {
         super(settings);
@@ -60,11 +63,15 @@ public class FeederBlock extends BlockWithEntity {
             feederStack.increment(1);
             stack.decrementUnlessCreative(1, player);
         } else {
-            final Vec3d spawnPos = pos.up().toCenterPos();
+            final Direction facing = state.get(FACING);
+            final Vec3d spawnPos = pos.offset(facing).toCenterPos();
             final ItemEntity itemEntity = new ItemEntity(world, spawnPos.getX(), spawnPos.getY(), spawnPos.getZ(), feederStack.copyAndEmpty());
+            itemEntity.setVelocity(facing.getVector().getX() * 0.3, facing.getVector().getY(), facing.getVector().getZ() * 0.3);
 
             world.spawnEntity(itemEntity);
         }
+        feederBlockEntity.markDirty();
+        world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
 
         return ItemActionResult.success(world.isClient());
     }
@@ -77,6 +84,11 @@ public class FeederBlock extends BlockWithEntity {
     @Override
     protected boolean hasComparatorOutput(BlockState state) {
         return true;
+    }
+
+    @Override
+    protected boolean canPathfindThrough(BlockState state, NavigationType type) {
+        return false;
     }
 
     @Nullable

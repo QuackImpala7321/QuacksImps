@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "quimps:placer"
+    "quimps:placer",
+    "quimps:feeder"
   ]
 }

@@ -20,11 +20,11 @@
               "source": "block_entity"
             }
           ],
-          "name": "quimps:birch_feeder"
+          "name": "quimps:feeder"
         }
       ],
       "rolls": 1
     }
   ],
-  "random_sequence": "quimps:blocks/birch_feeder"
+  "random_sequence": "quimps:blocks/feeder"
 }

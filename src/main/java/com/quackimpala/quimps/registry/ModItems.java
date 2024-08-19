@@ -12,9 +12,7 @@ import java.util.Arrays;
 public class ModItems {
     public static void populateItemGroups() {
         addToCreative(ItemGroups.REDSTONE, Spot.AFTER, ModBlocks.PLACER, Blocks.STICKY_PISTON);
-        addToCreative(ItemGroups.FUNCTIONAL, Spot.BEFORE, Blocks.COMPOSTER,
-                ModBlocks.OAK_FEEDER, ModBlocks.SPRUCE_FEEDER, ModBlocks.BIRCH_FEEDER
-        );
+        addToCreative(ItemGroups.FUNCTIONAL, Spot.BEFORE, Blocks.COMPOSTER, ModBlocks.FEEDER);
     }
 
     private static void addToCreative(RegistryKey<ItemGroup> group, Spot spot, ItemConvertible target, ItemConvertible... items) {
@@ -23,7 +21,7 @@ public class ModItems {
             addToCreative(group, Spot.AFTER, items[0], Arrays.copyOfRange(items, 1, items.length));
     }
 
-    private static void addToCreative(RegistryKey<ItemGroup> group, Spot spot, ItemConvertible item, ItemConvertible target) {
+    private static void addToCreative(RegistryKey<ItemGroup> group, Spot spot, ItemConvertible target, ItemConvertible item) {
         ItemGroupEvents.modifyEntriesEvent(group).register(content -> {
             switch (spot) {
                 case BEFORE -> content.addBefore(target, item);

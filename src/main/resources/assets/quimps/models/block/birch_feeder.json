@@ -1,7 +1,0 @@
-{
-  "parent": "quimps:block/feeder",
-  "textures": {
-    "texture": "minecraft:block/birch_planks",
-    "top": "minecraft:block/birch_log"
-  }
-}

@@ -6,6 +6,8 @@ import com.quackimpala.quimps.block.PlacerBlock;
 import net.minecraft.block.AbstractBlock.Settings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -13,9 +15,9 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
     public static final PlacerBlock PLACER = registerBlock("placer", new PlacerBlock(Settings.copy(Blocks.DISPENSER)));
-    public static final FeederBlock OAK_FEEDER = registerBlock("oak_feeder", new FeederBlock(Settings.copy(Blocks.OAK_PLANKS)));
-    public static final FeederBlock SPRUCE_FEEDER = registerBlock("spruce_feeder", new FeederBlock(Settings.copy(Blocks.SPRUCE_PLANKS)));
-    public static final FeederBlock BIRCH_FEEDER = registerBlock("birch_feeder", new FeederBlock(Settings.copy(Blocks.BIRCH_PLANKS)));
+    public static final FeederBlock FEEDER = registerBlock("feeder", new FeederBlock(Settings.create()
+            .mapColor(MapColor.OAK_TAN).instrument(NoteBlockInstrument.BASEDRUM)
+            .strength(2.0f, 6.0f)));
 
     public static void registerBlocks() {}
 
