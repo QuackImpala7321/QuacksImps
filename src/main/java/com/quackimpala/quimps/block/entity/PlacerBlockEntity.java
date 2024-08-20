@@ -1,6 +1,6 @@
 package com.quackimpala.quimps.block.entity;
 
-import com.quackimpala.quimps.registry.ModBlockEntities;
+import com.quackimpala.quimps.registry.QIBlockEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -18,7 +18,7 @@ public class PlacerBlockEntity extends LootableContainerBlockEntity {
     private DefaultedList<ItemStack> inventory;
 
     public PlacerBlockEntity(BlockPos blockPos, BlockState blockState) {
-        super(ModBlockEntities.PLACER, blockPos, blockState);
+        super(QIBlockEntities.PLACER, blockPos, blockState);
         inventory = DefaultedList.ofSize(size(), ItemStack.EMPTY);
     }
 

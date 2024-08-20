@@ -13,7 +13,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-public class ModBlocks {
+public class QIBlocks {
     public static final PlacerBlock PLACER = registerBlock("placer", new PlacerBlock(Settings.copy(Blocks.DISPENSER)));
     public static final FeederBlock FEEDER = registerBlock("feeder", new FeederBlock(Settings.create()
             .mapColor(MapColor.OAK_TAN).instrument(NoteBlockInstrument.BASEDRUM)

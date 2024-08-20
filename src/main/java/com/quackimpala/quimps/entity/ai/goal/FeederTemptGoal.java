@@ -3,12 +3,11 @@ package com.quackimpala.quimps.entity.ai.goal;
 import com.quackimpala.quimps.AnimalEntityAccessor;
 import com.quackimpala.quimps.QuacksImps;
 import com.quackimpala.quimps.block.entity.FeederBlockEntity;
-import com.quackimpala.quimps.registry.ModBlockEntities;
+import com.quackimpala.quimps.registry.QIBlockEntities;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
@@ -59,7 +58,7 @@ public class FeederTemptGoal extends Goal {
     }
 
     private Optional<FeederBlockEntity> getFeederAt(BlockPos pos) {
-        return entity.getWorld().getBlockEntity(pos, ModBlockEntities.FEEDER);
+        return entity.getWorld().getBlockEntity(pos, QIBlockEntities.FEEDER);
     }
 
     private Optional<FeederBlockEntity> getClosestFeeder() {

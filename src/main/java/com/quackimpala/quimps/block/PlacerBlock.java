@@ -1,8 +1,8 @@
 package com.quackimpala.quimps.block;
 
 import com.mojang.serialization.MapCodec;
-import com.quackimpala.quimps.registry.ModBlockEntities;
-import com.quackimpala.quimps.registry.ModStats;
+import com.quackimpala.quimps.registry.QIBlockEntities;
+import com.quackimpala.quimps.registry.QIStats;
 import com.quackimpala.quimps.PlacerItemPlacementContext;
 import com.quackimpala.quimps.block.entity.PlacerBlockEntity;
 import net.minecraft.block.Block;
@@ -58,7 +58,7 @@ public class PlacerBlock extends BlockWithEntity {
         final BlockEntity blockEntity = world.getBlockEntity(pos);
         if (blockEntity instanceof PlacerBlockEntity placerBlockEntity) {
             player.openHandledScreen(placerBlockEntity);
-            player.incrementStat(ModStats.INSPECT_PLACER);
+            player.incrementStat(QIStats.INSPECT_PLACER);
         }
 
         return ActionResult.CONSUME;
@@ -70,7 +70,7 @@ public class PlacerBlock extends BlockWithEntity {
         if (!world.getBlockState(targetPos).getRegistryEntry().isIn(BlockTags.REPLACEABLE))
             return false;
 
-        final Optional<PlacerBlockEntity> optional = world.getBlockEntity(pos, ModBlockEntities.PLACER);
+        final Optional<PlacerBlockEntity> optional = world.getBlockEntity(pos, QIBlockEntities.PLACER);
         if (optional.isEmpty())
             return false;
 

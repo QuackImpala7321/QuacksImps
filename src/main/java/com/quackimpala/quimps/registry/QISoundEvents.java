@@ -6,7 +6,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
-public class ModSoundEvents {
+public class QISoundEvents {
     public static SoundEvent LEASH_BREAK = register("entity.leash.break");
 
     private static SoundEvent register(String path) {

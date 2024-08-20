@@ -7,7 +7,7 @@ import net.minecraft.stat.StatFormatter;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Identifier;
 
-public class ModStats {
+public class QIStats {
     public static Identifier INSPECT_PLACER = register("inspect_placer");
 
     private static Identifier register(String id) {

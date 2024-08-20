@@ -1,6 +1,6 @@
 package com.quackimpala.quimps.mixin.dispenser_behavior;
 
-import com.quackimpala.quimps.registry.tag.ModEntityTags;
+import com.quackimpala.quimps.registry.tag.QIEntityTags;
 import com.quackimpala.quimps.util.CauldronUtil;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.DispenserBlock;
@@ -48,7 +48,7 @@ public abstract class BucketItemDispenserBehavior extends ItemDispenserBehavior 
     @Unique
     private boolean tryMilkEntity(ServerWorld world, BlockPos pos) {
         final List<LivingEntity> entities = world.getEntitiesByClass(LivingEntity.class, new Box(pos), entity ->
-                entity.getType().isIn(ModEntityTags.MILKABLE_TAG) && EntityPredicates.EXCEPT_SPECTATOR.test(entity));
+                entity.getType().isIn(QIEntityTags.MILKABLE_TAG) && EntityPredicates.EXCEPT_SPECTATOR.test(entity));
 
         if (entities.isEmpty())
             return false;

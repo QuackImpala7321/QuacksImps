@@ -9,10 +9,10 @@ import net.minecraft.registry.RegistryKey;
 
 import java.util.Arrays;
 
-public class ModItems {
+public class QIItems {
     public static void populateItemGroups() {
-        addToCreative(ItemGroups.REDSTONE, Spot.AFTER, ModBlocks.PLACER, Blocks.STICKY_PISTON);
-        addToCreative(ItemGroups.FUNCTIONAL, Spot.BEFORE, Blocks.COMPOSTER, ModBlocks.FEEDER);
+        addToCreative(ItemGroups.REDSTONE, Spot.AFTER, QIBlocks.PLACER, Blocks.STICKY_PISTON);
+        addToCreative(ItemGroups.FUNCTIONAL, Spot.BEFORE, Blocks.COMPOSTER, QIBlocks.FEEDER);
     }
 
     private static void addToCreative(RegistryKey<ItemGroup> group, Spot spot, ItemConvertible target, ItemConvertible... items) {

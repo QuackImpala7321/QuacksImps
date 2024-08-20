@@ -1,7 +1,6 @@
 package com.quackimpala.quimps.block.entity;
 
-import com.quackimpala.quimps.QuacksImps;
-import com.quackimpala.quimps.registry.ModBlockEntities;
+import com.quackimpala.quimps.registry.QIBlockEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.component.ComponentMap;
@@ -32,7 +31,7 @@ public class FeederBlockEntity extends BlockEntity implements LootableInventory,
     private long lootTableSeed;
 
     public FeederBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.FEEDER, pos, state);
+        super(QIBlockEntities.FEEDER, pos, state);
         stack = ItemStack.EMPTY;
     }
 

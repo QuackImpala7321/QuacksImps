@@ -6,7 +6,7 @@ import com.quackimpala.quimps.util.QueueableDispenserBehavior;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.item.Items;
 
-public class ModDispenserBehaviors {
+public class QIDispenserBehaviors {
     public static final QueueableDispenserBehavior FLOWERS = new QueueableDispenserBehavior(new FlowerItemDispenserBehavior());
 
     public static void registerBehaviors() {

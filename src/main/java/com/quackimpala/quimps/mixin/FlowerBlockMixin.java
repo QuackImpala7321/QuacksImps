@@ -1,6 +1,6 @@
 package com.quackimpala.quimps.mixin;
 
-import com.quackimpala.quimps.registry.ModDispenserBehaviors;
+import com.quackimpala.quimps.registry.QIDispenserBehaviors;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.component.type.SuspiciousStewEffectsComponent;
@@ -16,6 +16,6 @@ public abstract class FlowerBlockMixin {
             at = @At("TAIL")
     )
     private void initMixin(SuspiciousStewEffectsComponent stewEffects, AbstractBlock.Settings settings, CallbackInfo ci) {
-        ModDispenserBehaviors.FLOWERS.queue(FlowerBlock.class.cast(this));
+        QIDispenserBehaviors.FLOWERS.queue(FlowerBlock.class.cast(this));
     }
 }
