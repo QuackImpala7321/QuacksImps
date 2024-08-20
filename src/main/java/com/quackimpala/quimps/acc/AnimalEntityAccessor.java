@@ -1,4 +1,4 @@
-package com.quackimpala.quimps;
+package com.quackimpala.quimps.acc;
 
 public interface AnimalEntityAccessor {
     String EATING_COOLDOWN = "EatingCooldown";

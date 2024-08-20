@@ -1,4 +1,4 @@
-package com.quackimpala.quimps;
+package com.quackimpala.quimps.acc;
 
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.BlockState;

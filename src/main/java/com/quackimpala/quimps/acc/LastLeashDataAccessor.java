@@ -1,4 +1,4 @@
-package com.quackimpala.quimps;
+package com.quackimpala.quimps.acc;
 
 import com.mojang.datafixers.util.Either;
 import net.minecraft.entity.Entity;

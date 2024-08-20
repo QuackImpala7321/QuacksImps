@@ -1,6 +1,6 @@
 package com.quackimpala.quimps.mixin;
 
-import com.quackimpala.quimps.AnimalEntityAccessor;
+import com.quackimpala.quimps.acc.AnimalEntityAccessor;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;

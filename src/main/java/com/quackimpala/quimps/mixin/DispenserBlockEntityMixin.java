@@ -1,6 +1,6 @@
 package com.quackimpala.quimps.mixin;
 
-import com.quackimpala.quimps.DispenserMixinAccessor;
+import com.quackimpala.quimps.acc.DispenserMixinAccessor;
 import net.minecraft.block.entity.DispenserBlockEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;

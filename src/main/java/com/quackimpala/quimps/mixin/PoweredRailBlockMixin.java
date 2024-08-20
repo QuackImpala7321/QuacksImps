@@ -1,6 +1,6 @@
 package com.quackimpala.quimps.mixin;
 
-import com.quackimpala.quimps.PoweredRailMixinAccessor;
+import com.quackimpala.quimps.acc.PoweredRailMixinAccessor;
 import net.minecraft.block.AbstractRailBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

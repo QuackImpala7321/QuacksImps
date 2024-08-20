@@ -2,11 +2,11 @@
 	"credit": "Made with Blockbench",
 	"parent": "minecraft:block/block",
 	"textures": {
-		"particle": "block/bricks",
-		"bricks": "block/bricks",
+		"particle": "minecraft:block/bricks",
+		"bricks": "minecraft:block/bricks",
 		"top": "block/oak_log",
 		"inside": "quimps:block/feeder_inside",
-		"bottom": "block/stripped_oak_log"
+		"bottom": "minecraft:block/stripped_oak_log"
 	},
 	"elements": [
 		{

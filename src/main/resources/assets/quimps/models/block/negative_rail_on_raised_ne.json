@@ -1,0 +1,6 @@
+{
+  "parent": "quimps:block/template_reversed_rail_raised_ne",
+  "textures": {
+    "rail": "quimps:block/powered_rail_dir_on"
+  }
+}

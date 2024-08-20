@@ -1,4 +1,4 @@
-package com.quackimpala.quimps;
+package com.quackimpala.quimps.acc;
 
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.StringIdentifiable;

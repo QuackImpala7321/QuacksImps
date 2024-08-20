@@ -1,12 +1,9 @@
 package com.quackimpala.quimps.mixin;
 
-import com.quackimpala.quimps.DispenserMixinAccessor;
-import com.quackimpala.quimps.QuacksImps;
+import com.quackimpala.quimps.acc.DispenserMixinAccessor;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.DispenserBlock;
-import net.minecraft.block.dispenser.DispenserBehavior;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.state.StateManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

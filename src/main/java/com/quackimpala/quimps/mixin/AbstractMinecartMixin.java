@@ -1,8 +1,8 @@
 package com.quackimpala.quimps.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import com.quackimpala.quimps.PoweredRailMixinAccessor;
-import com.quackimpala.quimps.PoweredRailMixinAccessor.PowerDirection;
+import com.quackimpala.quimps.acc.PoweredRailMixinAccessor;
+import com.quackimpala.quimps.acc.PoweredRailMixinAccessor.PowerDirection;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.enums.RailShape;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;

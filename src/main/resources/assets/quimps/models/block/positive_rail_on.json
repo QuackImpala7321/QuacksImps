@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/rail_flat",
+  "textures": {
+    "rail": "quimps:block/powered_rail_dir_on"
+  }
+}

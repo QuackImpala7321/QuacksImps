@@ -1,6 +1,6 @@
 package com.quackimpala.quimps.mixin;
 
-import com.quackimpala.quimps.DispenserMixinAccessor;
+import com.quackimpala.quimps.acc.DispenserMixinAccessor;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.HoneycombItem;
 import net.minecraft.item.ItemUsageContext;

@@ -1,6 +1,6 @@
 package com.quackimpala.quimps.mixin;
 
-import com.quackimpala.quimps.LastLeashDataAccessor;
+import com.quackimpala.quimps.acc.LastLeashDataAccessor;
 import com.quackimpala.quimps.registry.QISoundEvents;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;

@@ -1,6 +1,6 @@
 package com.quackimpala.quimps.mixin;
 
-import com.quackimpala.quimps.LastLeashDataAccessor;
+import com.quackimpala.quimps.acc.LastLeashDataAccessor;
 import net.minecraft.entity.Leashable.LeashData;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.nbt.NbtCompound;

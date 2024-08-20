@@ -1,6 +1,6 @@
 package com.quackimpala.quimps.entity.ai.goal;
 
-import com.quackimpala.quimps.AnimalEntityAccessor;
+import com.quackimpala.quimps.acc.AnimalEntityAccessor;
 import com.quackimpala.quimps.QuacksImps;
 import com.quackimpala.quimps.block.entity.FeederBlockEntity;
 import com.quackimpala.quimps.registry.QIBlockEntities;
