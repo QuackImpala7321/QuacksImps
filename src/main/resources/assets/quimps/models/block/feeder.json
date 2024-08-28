@@ -4,7 +4,7 @@
 	"textures": {
 		"particle": "minecraft:block/bricks",
 		"bricks": "minecraft:block/bricks",
-		"top": "block/oak_log",
+		"top": "minecraft:block/oak_log",
 		"inside": "quimps:block/feeder_inside",
 		"bottom": "minecraft:block/stripped_oak_log"
 	},

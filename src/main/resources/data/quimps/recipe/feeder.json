@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:brick"
+    },
+    "O": {
+      "item": "minecraft:oak_wood"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "S": {
+      "item": "minecraft:stripped_oak_wood"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "#G#",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "quimps:feeder"
+  }
+}

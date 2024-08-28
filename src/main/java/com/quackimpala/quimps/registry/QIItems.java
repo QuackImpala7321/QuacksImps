@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 public class QIItems {
     public static void populateItemGroups() {
-        addToCreative(ItemGroups.REDSTONE, Spot.AFTER, QIBlocks.PLACER, Blocks.STICKY_PISTON);
+        addToCreative(ItemGroups.REDSTONE, Spot.AFTER, Blocks.STICKY_PISTON, QIBlocks.PLACER);
         addToCreative(ItemGroups.FUNCTIONAL, Spot.BEFORE, Blocks.COMPOSTER, QIBlocks.FEEDER);
     }
 

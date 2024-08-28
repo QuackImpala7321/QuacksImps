@@ -1,7 +1,6 @@
 package com.quackimpala.quimps.entity.ai.goal;
 
 import com.quackimpala.quimps.acc.AnimalEntityAccessor;
-import com.quackimpala.quimps.QuacksImps;
 import com.quackimpala.quimps.block.entity.FeederBlockEntity;
 import com.quackimpala.quimps.registry.QIBlockEntities;
 import net.minecraft.entity.ai.goal.Goal;
@@ -113,11 +112,9 @@ public class FeederTemptGoal extends Goal {
         final AnimalEntityAccessor acc = (AnimalEntityAccessor) entity;
         int breedingAge = entity.getBreedingAge();
         if (breedingAge == 0 && entity.canEat()) {
-            QuacksImps.LOGGER.info("freaky");
             entity.lovePlayer(null);
             return true;
         } else if (entity.isBaby() && acc.readyToEat()) {
-            QuacksImps.LOGGER.info("grow up kid");
             entity.growUp(PassiveEntity.toGrowUpAge(-breedingAge), true);
             acc.setEatingCooldown(600);
             return true;

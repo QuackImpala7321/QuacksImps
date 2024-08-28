@@ -19,6 +19,9 @@
     ],
     "main": [
       "com.quackimpala.quimps.QuacksImps"
+    ],
+    "fabric-datagen": [
+      "com.quackimpala.quimps.QIDataGeneration"
     ]
   },
   "mixins": [

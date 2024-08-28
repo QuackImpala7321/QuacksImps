@@ -1,13 +1,13 @@
 {
-  "parent": "block/block",
+  "parent": "minecraft:block/block",
   "textures": {
-    "bottom": "minecraft:block/furnace_top",
+    "bottom": "quimps:block/placer_bottom",
     "top": "quimps:block/placer_top",
     "north": "quimps:block/placer_front",
-    "south": "minecraft:block/furnace_side",
+    "south": "quimps:block/placer_side",
     "west": "quimps:block/placer_side",
     "east": "quimps:block/placer_side",
-    "particle": "#north"
+    "particle": "#top"
   },
   "elements": [
     {

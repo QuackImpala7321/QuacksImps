@@ -3,7 +3,10 @@
   "category": "redstone",
   "key": {
     "#": {
-      "tag": "c:copper_block_crafting_materials"
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    "C": {
+      "item": "minecraft:copper_ingot"
     },
     "P": {
       "item": "minecraft:piston"
@@ -13,9 +16,9 @@
     }
   },
   "pattern": [
-    "#R#",
-    "RPR",
-    "#R#"
+    "CCC",
+    "#P#",
+    "CRC"
   ],
   "result": {
     "count": 1,

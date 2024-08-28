@@ -48,7 +48,7 @@ public abstract class BucketItemDispenserBehavior extends ItemDispenserBehavior 
     @Unique
     private boolean tryMilkEntity(ServerWorld world, BlockPos pos) {
         final List<LivingEntity> entities = world.getEntitiesByClass(LivingEntity.class, new Box(pos), entity ->
-                entity.getType().isIn(QIEntityTags.MILKABLE_TAG) && EntityPredicates.EXCEPT_SPECTATOR.test(entity));
+                entity.getType().isIn(QIEntityTags.MILKABLE) && EntityPredicates.EXCEPT_SPECTATOR.test(entity));
 
         if (entities.isEmpty())
             return false;
