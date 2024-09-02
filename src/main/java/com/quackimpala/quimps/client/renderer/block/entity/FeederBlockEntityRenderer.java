@@ -15,9 +15,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @Environment(EnvType.CLIENT)
 public class FeederBlockEntityRenderer implements BlockEntityRenderer<FeederBlockEntity> {
     protected static final double TO_PX = 0.0625;
