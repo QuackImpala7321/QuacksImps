@@ -10,7 +10,6 @@
     "CropBlockMixin",
     "DispenserBlockEntityMixin",
     "DispenserBlockMixin",
-    "FlowerBlockMixin",
     "GoalSelectorMixin",
     "HoneycombItemMixin",
     "LeashableMixin",

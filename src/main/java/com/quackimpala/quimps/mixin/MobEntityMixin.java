@@ -1,7 +1,7 @@
 package com.quackimpala.quimps.mixin;
 
 import com.quackimpala.quimps.acc.LastLeashDataAccessor;
-import net.minecraft.entity.Leashable.LeashData;
+import net.minecraft.entity.Leashable;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.nbt.NbtCompound;
 import org.jetbrains.annotations.Nullable;
@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class MobEntityMixin implements LastLeashDataAccessor {
     @Unique
     @Nullable
-    private LeashData lastLeashData;
+    private Leashable.LeashData lastLeashData;
 
     @Inject(
             method = "writeCustomDataToNbt",
@@ -35,12 +35,12 @@ public abstract class MobEntityMixin implements LastLeashDataAccessor {
 
     @Override
     @Nullable
-    public LeashData getLastLeashData() {
+    public Leashable.LeashData getLastLeashData() {
         return lastLeashData;
     }
 
     @Override
-    public void setLastLeashData(@Nullable LeashData lastLeashData) {
+    public void setLastLeashData(@Nullable Leashable.LeashData lastLeashData) {
         this.lastLeashData = lastLeashData;
     }
 }

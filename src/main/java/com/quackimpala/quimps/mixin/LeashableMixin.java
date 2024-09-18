@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Leashable.class)
-public interface LeashableMixin extends LastLeashDataAccessor {
+public interface LeashableMixin {
     @Redirect(
             method = "detachLeash(Lnet/minecraft/entity/Entity;ZZ)V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;dropItem(Lnet/minecraft/item/ItemConvertible;)Lnet/minecraft/entity/ItemEntity;")
