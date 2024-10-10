@@ -16,6 +16,7 @@
     "LeashableEntitiesMixin",
     "LeashableMixin",
     "PoweredRailBlockMixin",
+    "VineBlockMixin",
     "dispenser_behavior.BucketItemDispenserBehavior",
     "dispenser_behavior.FluidItemDispenserBehavior",
     "dispenser_behavior.GlassBottleItemDispenserBehavior",

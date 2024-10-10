@@ -1,0 +1,6 @@
+{
+    "parent": "quimps:block/feeder",
+    "textures": {
+        "front": "quimps:block/feeder_front_filled"
+    }
+}

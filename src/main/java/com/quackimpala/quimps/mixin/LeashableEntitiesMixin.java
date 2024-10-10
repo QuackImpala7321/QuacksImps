@@ -2,6 +2,8 @@ package com.quackimpala.quimps.mixin;
 
 import com.quackimpala.quimps.acc.LastLeashDataAccessor;
 import net.minecraft.entity.Leashable;
+import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.vehicle.BoatEntity;
 import net.minecraft.nbt.NbtCompound;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,9 +12,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(targets = {
-        "net.minecraft.entity.mob.MobEntity",
-        "net.minecraft.entity.vehicle.BoatEntity"
+@Mixin(value = {
+        MobEntity.class,
+        BoatEntity.class
 })
 public abstract class LeashableEntitiesMixin implements LastLeashDataAccessor {
     @Unique

@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BeehiveBlockEntity.class)
-public class BeehiveBlockEntityMixin {
+public abstract class BeehiveBlockEntityMixin {
     @Inject(
             method = "tryEnterHive",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/block/entity/BeehiveBlockEntity;addBee(Lnet/minecraft/block/entity/BeehiveBlockEntity$BeeData;)V", shift = At.Shift.BEFORE)

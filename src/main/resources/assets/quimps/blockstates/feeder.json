@@ -1,18 +1,34 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,filled=false": {
       "model": "quimps:block/feeder",
       "y": 90
     },
-    "facing=north": {
+    "facing=north,filled=false": {
       "model": "quimps:block/feeder"
     },
-    "facing=south": {
+    "facing=south,filled=false": {
       "model": "quimps:block/feeder",
       "y": 180
     },
-    "facing=west": {
+    "facing=west,filled=false": {
       "model": "quimps:block/feeder",
+      "y": 270
+    },
+
+    "facing=east,filled=true": {
+      "model": "quimps:block/feeder_filled",
+      "y": 90
+    },
+    "facing=north,filled=true": {
+      "model": "quimps:block/feeder_filled"
+    },
+    "facing=south,filled=true": {
+      "model": "quimps:block/feeder_filled",
+      "y": 180
+    },
+    "facing=west,filled=true": {
+      "model": "quimps:block/feeder_filled",
       "y": 270
     }
   }
