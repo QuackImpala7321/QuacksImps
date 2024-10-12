@@ -40,14 +40,6 @@ public class FeederBlock extends BlockWithEntity {
         return world.isClient() ? null : validateTicker(type, QIBlockEntities.FEEDER, FeederBlockEntity::tick);
     }
 
-    public static void setFilled(World world, BlockPos pos) {
-        if (world == null || world.isClient()) return;
-        final BlockState state = world.getBlockState(pos);
-        final BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof FeederBlockEntity feederBlockEntity)
-            world.setBlockState(pos, state.with(FILLED, feederBlockEntity.isFilled()));
-    }
-
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (world.isClient())
