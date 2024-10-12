@@ -1,6 +1,6 @@
 package com.quackimpala.quimps.screen;
 
-import com.quackimpala.quimps.QuacksImps;
+import com.quackimpala.quimps.registry.QIScreenHandlers;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
@@ -17,7 +17,7 @@ public class SingleSlotScreenHandler extends ScreenHandler {
     }
 
     public SingleSlotScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
-        super(QuacksImps.FEEDER_SCREEN, syncId);
+        super(QIScreenHandlers.FEEDER_SCREEN, syncId);
         checkSize(inventory, 1);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
