@@ -27,7 +27,7 @@ public abstract class FluidItemDispenserBehavior {
         final ServerWorld world = pointer.world();
         final BlockState targetState = world.getBlockState(targetPos);
 
-        if (!CauldronUtil.tryInteractCauldron(world, targetPos, targetState, stack, pointer.blockEntity()))
+        if (!CauldronUtil.tryInteractCauldron(world, targetPos, targetState, stack))
             return;
 
         final ItemDispenserBehavior $this = ItemDispenserBehavior.class.cast(this);

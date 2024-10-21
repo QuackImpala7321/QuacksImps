@@ -41,7 +41,7 @@ public abstract class BucketItemDispenserBehavior extends ItemDispenserBehavior 
             super.dispenseSilently(pointer, milkStack);
             cir.setReturnValue(
                     decrementStackWithRemainder(pointer, stack, milkStack));
-        } else if (CauldronUtil.tryInteractCauldron(world, targetPos, targetState, stack, pointer.blockEntity()))
+        } else if (CauldronUtil.tryInteractCauldron(world, targetPos, targetState, stack))
             cir.setReturnValue(CauldronUtil.getOutput());
     }
 

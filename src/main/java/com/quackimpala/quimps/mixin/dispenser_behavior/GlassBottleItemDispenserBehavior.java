@@ -31,7 +31,7 @@ public abstract class GlassBottleItemDispenserBehavior extends FallibleItemDispe
         final BlockPos targetPos = pointer.pos().offset(pointer.state().get(DispenserBlock.FACING));
         final BlockState targetState = world.getBlockState(targetPos);
 
-        setSuccess(CauldronUtil.tryInteractCauldron(world, targetPos, targetState, stack, pointer.blockEntity()));
+        setSuccess(CauldronUtil.tryInteractCauldron(world, targetPos, targetState, stack));
         if (!isSuccess())
             return;
 

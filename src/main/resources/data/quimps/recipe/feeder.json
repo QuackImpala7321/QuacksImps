@@ -5,20 +5,17 @@
     "#": {
       "item": "minecraft:brick"
     },
-    "O": {
-      "item": "minecraft:oak_wood"
+    "P": {
+      "tag": "minecraft:planks"
     },
-    "G": {
-      "item": "minecraft:glass"
-    },
-    "S": {
-      "item": "minecraft:stripped_oak_wood"
+    "I": {
+      "item": "minecraft:iron_ingot"
     }
   },
   "pattern": [
-    "OOO",
-    "#G#",
-    "SSS"
+    "PPP",
+    "###",
+    "#I#"
   ],
   "result": {
     "count": 1,

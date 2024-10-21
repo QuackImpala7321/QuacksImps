@@ -26,7 +26,7 @@ public abstract class PotionItemDispenserBehavior extends ItemDispenserBehavior 
         final BlockPos targetPos = pointer.pos().offset(pointer.state().get(DispenserBlock.FACING));
         final BlockState targetState = world.getBlockState(targetPos);
 
-        if (!CauldronUtil.tryInteractCauldron(world, targetPos, targetState, stack, pointer.blockEntity()))
+        if (!CauldronUtil.tryInteractCauldron(world, targetPos, targetState, stack))
             return;
 
         cir.setReturnValue(
