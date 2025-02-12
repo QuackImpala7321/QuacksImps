@@ -80,11 +80,16 @@ public class PlacerBlock extends BlockWithEntity {
             return false;
 
         final ItemStack stack = placerBlockEntity.getStack(slotId);
-        if (!(stack.getItem() instanceof BlockItem blockItem))
-            return false;
+        final Item item = stack.getItem();
 
-        final boolean result = blockItem.place(
-                new PlacerItemPlacementContext(world, targetPos, stack, facing)).isAccepted();
+        final boolean result;
+        if (item instanceof BlockItem blockItem) {
+            result = blockItem.place(new PlacerItemPlacementContext(world, targetPos, stack, facing)).isAccepted();
+        } else if (item instanceof DecorationItem decorationItem) {
+            result = decorationItem.useOnBlock(new ItemUsageContext(world, null, Hand.MAIN_HAND, stack, new BlockHitResult(pos.toCenterPos(), facing, pos, false))).isAccepted();
+        } else {
+            return false;
+        }
 
         world.emitGameEvent(GameEvent.BLOCK_ACTIVATE, pos, GameEvent.Emitter.of(placerBlockEntity.getCachedState()));
         world.updateNeighbors(pos, this);
@@ -93,14 +98,15 @@ public class PlacerBlock extends BlockWithEntity {
 
     @Override
     protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
-        boolean powered = world.isReceivingRedstonePower(pos);
-        boolean triggered = state.get(TRIGGERED);
+        final boolean powered = world.isReceivingRedstonePower(pos);
+        final boolean triggered = state.get(TRIGGERED);
 
         if (powered && !triggered) {
             world.scheduleBlockTick(pos, this, DELAY);
             world.setBlockState(pos, state.with(TRIGGERED, true), Block.NOTIFY_LISTENERS);
-        } else if (!powered && triggered)
+        } else if (!powered && triggered) {
             world.setBlockState(pos, state.with(TRIGGERED, false), Block.NOTIFY_LISTENERS);
+        }
     }
 
     @Override

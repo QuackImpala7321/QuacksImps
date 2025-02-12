@@ -5,6 +5,7 @@ import com.quackimpala.quimps.block.FeederBlock;
 import com.quackimpala.quimps.block.entity.FeederBlockEntity;
 import com.quackimpala.quimps.registry.QIBlockEntities;
 import com.quackimpala.quimps.util.FeederPathData;
+import net.minecraft.entity.ai.brain.sensor.TemptationsSensor;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.pathing.Path;
 import net.minecraft.entity.ai.pathing.PathNode;
@@ -68,7 +69,7 @@ public class FeederTemptGoal extends Goal {
     }
 
     private Optional<FeederPathData> sampleClosest() {
-        final Box box = new Box(entity.getBlockPos()).expand(10, 2, 10);
+        final Box box = new Box(entity.getBlockPos()).expand(TemptationsSensor.MAX_DISTANCE, TemptationsSensor.MAX_DISTANCE, TemptationsSensor.MAX_DISTANCE);
         BlockPos closestPos = null;
         Path closestPath = null;
         for (int x = (int) box.minX; x <= box.maxX; x++)

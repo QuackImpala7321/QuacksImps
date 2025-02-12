@@ -10,3 +10,6 @@ accessible method net/minecraft/block/dispenser/ItemDispenserBehavior decrementS
 accessible field net/minecraft/entity/ai/goal/TemptGoal speed D
 accessible field net/minecraft/entity/ai/goal/TemptGoal foodPredicate Ljava/util/function/Predicate;
 accessible field net/minecraft/entity/ai/goal/TemptGoal mob Lnet/minecraft/entity/mob/PathAwareEntity;
+accessible field net/minecraft/entity/ai/brain/sensor/TemptationsSensor predicate Ljava/util/function/Predicate;
+accessible field net/minecraft/entity/ai/brain/task/TemptTask speed Ljava/util/function/Function;
+accessible field net/minecraft/entity/ai/brain/task/TemptTask stopDistanceGetter Ljava/util/function/Function;
