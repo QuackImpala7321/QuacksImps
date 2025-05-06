@@ -1,6 +1,7 @@
 {
   "block.quimps.placer": "Placer",
   "block.quimps.feeder": "Feeder",
+  "block.quimps.rotator": "Rotator",
 
   "stat.quimps.inspect_placer": "Placers Searched",
 

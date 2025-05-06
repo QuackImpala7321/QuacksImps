@@ -1,0 +1,12 @@
+{
+  "parent": "quimps:block/all_orientable",
+  "textures": {
+    "bottom": "minecraft:block/cobblestone",
+    "top": "minecraft:block/cobblestone",
+    "north": "minecraft:block/crafting_table_top",
+    "south": "minecraft:block/cobblestone",
+    "west": "minecraft:block/cobblestone",
+    "east": "minecraft:block/cobblestone",
+    "particle": "#top"
+  }
+}

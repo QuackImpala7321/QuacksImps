@@ -13,9 +13,9 @@ import net.minecraft.registry.Registries;
 
 import java.util.List;
 
-public class QIDispenserBehaviors {
-    public static final FlowerItemDispenserBehavior FLOWER_BEHAVIOR = new FlowerItemDispenserBehavior();
-    public static final QueueableDispenserBehavior FLOWERS = new QueueableDispenserBehavior(FLOWER_BEHAVIOR) {
+public interface QIDispenserBehaviors {
+    FlowerItemDispenserBehavior FLOWER_BEHAVIOR = new FlowerItemDispenserBehavior();
+    QueueableDispenserBehavior FLOWERS = new QueueableDispenserBehavior(FLOWER_BEHAVIOR) {
         @SuppressWarnings("unchecked")
         @Override
         protected List<ItemConvertible> prepare() {
@@ -27,7 +27,7 @@ public class QIDispenserBehaviors {
         }
     };
 
-    public static void registerBehaviors() {
+    static void registerBehaviors() {
         DispenserBlock.registerBehavior(Items.BOWL, new BowlItemDispenserBehavior());
     }
 }

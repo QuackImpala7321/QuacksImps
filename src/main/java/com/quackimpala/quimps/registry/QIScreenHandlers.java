@@ -9,10 +9,10 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 
-public class QIScreenHandlers {
-    public static ScreenHandlerType<SingleSlotScreenHandler> FEEDER_SCREEN = registerScreenHandler("feeder", SingleSlotScreenHandler::new);
+public interface QIScreenHandlers {
+    ScreenHandlerType<SingleSlotScreenHandler> FEEDER_SCREEN = registerScreenHandler("feeder", SingleSlotScreenHandler::new);
 
-    public static void registerScreenHandlers() {}
+    static void registerScreenHandlers() {}
 
     private static <T extends ScreenHandler> ScreenHandlerType<T> registerScreenHandler(String id, ScreenHandlerType.Factory<T> factory) {
         return Registry.register(Registries.SCREEN_HANDLER, Identifier.of(QuacksImps.MOD_ID, id), new ScreenHandlerType<>(factory, FeatureFlags.VANILLA_FEATURES));

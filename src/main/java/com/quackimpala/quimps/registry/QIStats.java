@@ -7,8 +7,8 @@ import net.minecraft.stat.StatFormatter;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Identifier;
 
-public class QIStats {
-    public static Identifier INSPECT_PLACER = register("inspect_placer");
+public interface QIStats {
+    Identifier INSPECT_PLACER = register("inspect_placer");
 
     private static Identifier register(String id) {
         return register(id, StatFormatter.DEFAULT);
@@ -21,5 +21,5 @@ public class QIStats {
         return identifier;
     }
 
-    public static void registerStats() { }
+    static void registerStats() { }
 }

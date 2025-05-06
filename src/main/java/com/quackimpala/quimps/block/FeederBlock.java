@@ -13,6 +13,7 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -23,6 +24,7 @@ import org.jetbrains.annotations.Nullable;
 public class FeederBlock extends BlockWithEntity {
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final BooleanProperty FILLED = BooleanProperty.of("filled");
+    public static final BooleanProperty ENABLED = Properties.ENABLED;
 
     public static MapCodec<FeederBlock> CODEC = createCodec(FeederBlock::new);
 
@@ -31,7 +33,13 @@ public class FeederBlock extends BlockWithEntity {
         setDefaultState(getStateManager().getDefaultState()
                 .with(FACING, Direction.NORTH)
                 .with(FILLED, false)
+                .with(ENABLED, true)
         );
+    }
+
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(FACING, FILLED, ENABLED);
     }
 
     @Nullable
@@ -51,8 +59,11 @@ public class FeederBlock extends BlockWithEntity {
     }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING, FILLED);
+    protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
+        final boolean shouldEnable = !world.isReceivingRedstonePower(pos);
+        if (shouldEnable != state.get(ENABLED)) {
+            world.setBlockState(pos, state.with(ENABLED, shouldEnable), NOTIFY_LISTENERS);
+        }
     }
 
     @Override
@@ -103,7 +114,7 @@ public class FeederBlock extends BlockWithEntity {
     }
 
     @Override
-    protected MapCodec<? extends BlockWithEntity> getCodec() {
+    protected MapCodec<? extends FeederBlock> getCodec() {
         return CODEC;
     }
 }

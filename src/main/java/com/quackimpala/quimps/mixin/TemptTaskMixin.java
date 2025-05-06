@@ -3,16 +3,15 @@ package com.quackimpala.quimps.mixin;
 import com.google.common.collect.ImmutableMap;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import com.quackimpala.quimps.acc.AnimalEntityAccessor;
 import com.quackimpala.quimps.block.entity.FeederBlockEntity;
 import com.quackimpala.quimps.entity.ai.brain.QIMemoryModules;
 import com.quackimpala.quimps.registry.QIBlockEntities;
+import com.quackimpala.quimps.util.SharedFeederLogic;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.brain.*;
 import net.minecraft.entity.ai.brain.task.TemptTask;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.GlobalPos;
@@ -29,7 +28,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 
@@ -66,7 +64,11 @@ public abstract class TemptTaskMixin {
         final World world = entity.getServer().getWorld(pos.dimension());
         if (world == null || world != entity.getWorld()) return Optional.empty();
 
-        return world.getBlockEntity(pos.pos(), QIBlockEntities.FEEDER);
+        final Optional<FeederBlockEntity> result = world.getBlockEntity(pos.pos(), QIBlockEntities.FEEDER);
+        if (result.isPresent() && result.get().isEnabled()) {
+            return result;
+        }
+        return Optional.empty();
     }
 
     @ModifyReturnValue(
@@ -113,29 +115,15 @@ public abstract class TemptTaskMixin {
         if (!brain.hasMemoryModule(QIMemoryModules.TEMPTING_FEEDER)) return;
 
         final Optional<FeederBlockEntity> op = getTemptingFeeder(pathAwareEntity);
+        brain.forget(QIMemoryModules.TEMPTING_FEEDER);
         if (op.isEmpty()) return;
         final FeederBlockEntity feederBlockEntity = op.get();
 
         if (pathAwareEntity instanceof AnimalEntity entity
                 && entity.isBreedingItem(feederBlockEntity.getStack())
-                && tryEat(entity)
+                && SharedFeederLogic.tryEat(entity)
         ) {
-            Objects.requireNonNull(feederBlockEntity.getWorld()).addSyncedBlockEvent(feederBlockEntity.getPos(), feederBlockEntity.getCachedState().getBlock(), FeederBlockEntity.EAT_EVENT, 0);
+            feederBlockEntity.serverEat(entity);
         }
-    }
-
-    @Unique
-    private boolean tryEat(AnimalEntity entity) {
-        final AnimalEntityAccessor acc = (AnimalEntityAccessor) entity;
-        int breedingAge = entity.getBreedingAge();
-        if (entity.isBaby() && acc.readyToEat()) {
-            entity.growUp(PassiveEntity.toGrowUpAge(-breedingAge), true);
-            acc.setEatingCooldown(600);
-            return true;
-        } else if (breedingAge == 0 && entity.canEat()) {
-            entity.lovePlayer(null);
-            return true;
-        }
-        return false;
     }
 }
